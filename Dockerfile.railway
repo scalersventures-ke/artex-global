@@ -45,5 +45,4 @@ RUN chmod +x /app/artex /app/start.sh
 COPY skills/ /app/skills/
 # data/(SQLite + jwt.key): Railway Volume 을 /app/data 에 마운트한다(Dockerfile VOLUME 은 Railway 가 거부).
 EXPOSE 8787 8788
-ENTRYPOINT ["/app/start.sh"]
-CMD ["sh","-c","exec /app/start.sh -addr :${PORT:-8787} -proxy :8788"]
+ENTRYPOINT ["sh","-c","exec /app/start.sh -addr :${PORT:-8787} -proxy :8788"]
